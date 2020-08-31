@@ -13,6 +13,6 @@ build:
       docker:
         dockerfile: Dockerfile
       sync:
-        manuaxprl:
+        manual:
           - src: "src/**/*.ts"
             dest: .
