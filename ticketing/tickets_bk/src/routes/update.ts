@@ -22,11 +22,9 @@ router.put(
   validateRequest,
   async (req: Request, res: Response) => {
     const ticket = await Ticket.findById(req.params.id);
-
     if (!ticket) {
       throw new NotFoundError();
     }
-
     if (ticket.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
     }
